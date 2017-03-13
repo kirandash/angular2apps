@@ -4,10 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 
 import {NavbarComponent} from './components/navbar/navbar.component';
+import {JumbotronComponent} from './components/jumbotron/jumbotron.component';
+import {AboutComponent} from './components/pages/about.component';
+import {HomeComponent} from './components/pages/home.component';
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent, NavbarComponent ],
+  declarations: [ AppComponent, 
+  				  NavbarComponent, 
+  				  JumbotronComponent, 
+  				  AboutComponent, 
+  				  HomeComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
