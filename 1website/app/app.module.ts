@@ -8,8 +8,10 @@ import {JumbotronComponent} from './components/jumbotron/jumbotron.component';
 import {AboutComponent} from './components/pages/about.component';
 import {HomeComponent} from './components/pages/home.component';
 
+import {routing} from './app.routing';
+
 @NgModule({
-  imports:      [ BrowserModule ],
+  imports:      [ BrowserModule, routing ],
   declarations: [ AppComponent, 
   				  NavbarComponent, 
   				  JumbotronComponent, 
