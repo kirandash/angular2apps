@@ -1,3 +1,14 @@
+<!-- Search user feature -->
+<div class="row">
+	<div class="col-sm-12">
+		<form class="well">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Enter github username" [(ngModel)]="username" name="username" (keyup)="searchUser()">
+			</div>
+		</form>
+	</div>
+</div>
+
 <!-- https://developer.github.com/v3/users/ User data -->
 <div *ngIf="user">
 	<div class="panel panel-default">
