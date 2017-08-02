@@ -21,4 +21,8 @@ export class MovieService {
   getIntheatres() {
   	return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&primary_release_date.gte=2017-07-01&primary_release_date.lte=2017-08-30&api_key='+this.apikey).map(res => res.json());
   }
+
+  searchMovies(searchStr: string) {
+  	return this._jsonp.get('https://api.themoviedb.org/3/search/movie?callback=JSONP_CALLBACK&query='+ searchStr +'&sort_by=popularity.desc&api_key='+this.apikey).map(res => res.json());
+  }
 }
