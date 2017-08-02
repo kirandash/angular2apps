@@ -1,3 +1,4 @@
+npm install -g angular-cli
 npm init to create package.json
 MEAN - Mongo Express Angular Node
 npm install express mongojs ejs body-parser --save
