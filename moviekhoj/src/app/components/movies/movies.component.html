@@ -1,32 +1,73 @@
-<div class="row">
-	<div class="col-md-2">
-		<h2>Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac risus in velit rhoncus condimentum id vitae lectus. Aenean lacinia tempus ante sit amet volutpat.</p>
-		<p><a href="#" class="btn btn-primary btn-lg">Read More</a></p>
+<div class="jumbotron">
+	<div class="container">
+		<h1>Browse our Movies</h1>
+		<p>Search for a movie using the form below:</p>
+		<form action="" (submit)="searchMovies()">
+			<input type="text" class="form-control" [(ngModel)]="searchStr" name="searchStr">
+			<br>
+			<button class="btn btn-primary btn-lg">Submit</button>
+		</form>
 	</div>
-	<div class="col-md-2">
-		<h2>Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac risus in velit rhoncus condimentum id vitae lectus. Aenean lacinia tempus ante sit amet volutpat.</p>
-		<p><a href="#" class="btn btn-primary btn-lg">Read More</a></p>
+</div>
+
+<div *ngIf="searchRes">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Search Results</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<!-- Loop through list -->
+				<div *ngFor="let movie of searchRes;let i=index" class="col-md-2">
+					<!-- only first 18 -->
+					<div *ngIf="i < 18">
+						<img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+						<h4>{{movie.title}}</h4>
+						<p>{{movie.release_date}}</p>
+						<p><a class="btn btn-default" href="#" [routerLink] = "['/movie', movie.id]">View Details</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Popoular Movies</h3>
 	</div>
-	<div class="col-md-2">
-		<h2>Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac risus in velit rhoncus condimentum id vitae lectus. Aenean lacinia tempus ante sit amet volutpat.</p>
-		<p><a href="#" class="btn btn-primary btn-lg">Read More</a></p>
+	<div class="panel-body">
+		<div class="row">
+			<!-- Loop through list -->
+			<div *ngFor="let movie of popularList;let i=index" class="col-md-2">
+				<!-- only first 6 -->
+				<div *ngIf="i < 6">
+					<img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+					<h4>{{movie.title}}</h4>
+					<p>{{movie.release_date}}</p>
+					<p><a class="btn btn-default" href="#" routerLink = "/movie/{{movie.id}}">View Details</a></p>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-2">
-		<h2>Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac risus in velit rhoncus condimentum id vitae lectus. Aenean lacinia tempus ante sit amet volutpat.</p>
-		<p><a href="#" class="btn btn-primary btn-lg">Read More</a></p>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Movies in Theatre</h3>
 	</div>
-	<div class="col-md-2">
-		<h2>Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac risus in velit rhoncus condimentum id vitae lectus. Aenean lacinia tempus ante sit amet volutpat.</p>
-		<p><a href="#" class="btn btn-primary btn-lg">Read More</a></p>
+	<div class="panel-body">
+		<div class="row">
+			<!-- Loop through list -->
+			<div *ngFor="let movie of theatresList;let i=index" class="col-md-2">
+				<!-- only first 6 -->
+				<div *ngIf="i < 6">
+					<img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+					<h4>{{movie.title}}</h4>
+					<p>{{movie.release_date}}</p>
+					<p><a class="btn btn-default" href="#" routerLink = "/movie/{{movie.id}}">View Details</a></p>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-2">
-		<h2>Heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac risus in velit rhoncus condimentum id vitae lectus. Aenean lacinia tempus ante sit amet volutpat.</p>
-		<p><a href="#" class="btn btn-primary btn-lg">Read More</a></p>
-	</div>					
 </div>
