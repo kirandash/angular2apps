@@ -19,3 +19,8 @@ Parent - Child hierarchy
 
 # Routing
 
+Secured routing, Routing tells which component to be viewed.
+
+Not a part of angular core. But a part of router module. @angular/router
+
+1. app.module.ts
