@@ -24,3 +24,13 @@ Secured routing, Routing tells which component to be viewed.
 Not a part of angular core. But a part of router module. @angular/router
 
 1. app.module.ts
+
+# Service
+
+A discrete unit of functionality (functions & capabilities)
+
+Provided by dependency injection. A service is always at the application level as a singleton means it's logic is always same for the entire app. It is then injected to a component by providing a reference.
+
+ng g class movie
+
+ng g class character
