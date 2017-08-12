@@ -1,0 +1,25 @@
+.container {
+	color: #111;
+	margin-top: 12%;
+	background-color: #fbfbfb;
+	-webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+	        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+	width: 60%;
+	padding: 5%;
+	-webkit-border-radius: 3px;
+	        border-radius: 3px;
+} 
+
+h1.login-title {
+	padding-bottom: 50px;
+	font-family: "Cabin";
+	font-size: 32px;
+	color: #111;
+	text-align: center;
+} 
+
+button {
+	height: 60px;
+	margin-top: 20px;
+	width: 100%;
+} 
