@@ -23,4 +23,8 @@ export class ImageService {
   	return this.db.list('uploads');
   }
 
+  getImage(key: string) {
+    return firebase.database().ref('uploads/' + key).once('value')
+      .then((snap) => snap.val()); // get data only once from firebase
+  }
 }
