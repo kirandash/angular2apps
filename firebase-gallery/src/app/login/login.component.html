@@ -20,6 +20,6 @@
 					name="password" type="password" maxlength="70" password required>
 		</div>
 		<button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-lg btn-info" (click)="signIn()">Sign In</button>	
-		<p *ngIf="msg" class="text-danger">{{msg}}</p>
+		<!-- <p *ngIf="msg" class="text-danger">{{msg}}</p> -->
 	</form>
 </div>

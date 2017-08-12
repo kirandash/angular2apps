@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ImageDetailComponent implements OnInit {
   
-  private imageUrl = '';
+  imageUrl = '';
 
   constructor(private imageService: ImageService, private route: ActivatedRoute) { }
 
