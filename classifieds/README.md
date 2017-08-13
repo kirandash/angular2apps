@@ -1,5 +1,30 @@
 # Classifieds
 
+1. ng new classifieds --prefix cf
+
+2. Add firebase details to environment.ts and environment.prod.ts
+
+3. app.module.ts 
+		import { ReactiveFormsModule } from '@angular/forms';
+		Add ReactiveFormsModule to imports
+
+4. Create Class 
+
+	export class ClassifiedListing {
+		title = 'Classified Title';
+		content = 'Classified Content';
+		price = 200.0;
+		image = 'http://via.placeholder.com/450x350';
+	}
+
+5. Create classified service
+	npm install --save firebase angularfire2
+	create createClassified and updateClassified methods
+
+6. Create Classified list  component
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
 
 ## Development server

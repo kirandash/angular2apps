@@ -1,0 +1,114 @@
+<div class="container">
+	<div class="content columns" *ngIf="classified">
+	  <div class="column is-6">
+	    <h1>Classified Listing Preview</h1>
+	    <article class="message">
+	      <div class="message-header">
+	        <p>{{(classified | async).title}}</p>
+	      </div>
+	      <div class="message-body">
+	        <img [src]="(classified | async).image" width="350px"><br>
+	        <p>{{ (classified | async).content }}</p>
+	        <hr>
+	        <h4>List Price: {{ (classified | async).price | currency}}</h4>
+	      </div>
+	    </article>
+	    <h3>Form Values</h3>
+	    <p>Form value: <br> {{ classifiedForm.value | json }}</p>
+	    <p>Form status: {{ classifiedForm.status | json }}</p>
+	  </div>
+	  <div class="column">
+	    <form  [formGroup]="classifiedForm" novalidate>
+	    <h1>Create your Listing</h1>
+	    <div class="field is-horizontal">
+	      <div class="field-label is-normal">
+	        <label class="label">Title</label>
+	      </div>
+	      <div class="field-body">
+	        <div class="field">
+	          <div class="control">
+	            <input class="input" type="text"
+	                   formControlName="title"
+	                   (change)="updateClassifiedChanges()"
+	                   [ngClass]="{
+	                                'is-success' :  classifiedForm.get('title').valid &&  classifiedForm.get('title').dirty,
+	                                'is-danger'  :  !classifiedForm.get('title').valid
+	                              }">
+	          </div>
+	          <p class="error is-danger" [hidden]="classifiedForm.get('title').valid">
+	            Title is required
+	          </p>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="field is-horizontal">
+	      <div class="field-label is-normal">
+	        <label class="label">Image URL</label>
+	      </div>
+	      <div class="field-body">
+	        <div class="field">
+	          <div class="control">
+	            <input class="input" type="text"
+	                   formControlName="image"
+	                   (change)="updateClassifiedChanges()"
+	                   [ngClass]="{
+	                               'is-success' :  classifiedForm.get('image').valid &&  classifiedForm.get('image').dirty,
+	                               'is-danger'  :  !classifiedForm.get('image').valid
+	                             }">
+	          </div>
+	          <p class="error is-danger" [hidden]="classifiedForm.get('image').valid">
+	            Image is required
+	          </p>
+	        </div>
+	      </div>
+	    </div>
+	      <div class="field is-horizontal">
+	        <div class="field-label is-normal"><label class="label">Price</label></div>
+	        <div class="field-body">
+	          <div class="field is-expanded">
+	            <div class="field has-addons">
+	              <p class="control">
+	                <a class="button is-static">
+	                  $
+	                </a>
+	              </p>
+	              <p class="control is-expanded">
+	                <input class="input" type="number"
+	                       formControlName="price"
+	                       (change)="updateClassifiedChanges()"
+	                       [ngClass]="{
+	                                   'is-success' :  classifiedForm.get('price').valid &&  classifiedForm.get('price').dirty,
+	                                   'is-danger'  :  !classifiedForm.get('price').valid
+	                                 }">
+	              </p>
+	            </div>
+	            <p class="error" [hidden]="classifiedForm.get('price').valid">Price is not valid</p>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="field is-horizontal">
+	        <div class="field-label is-normal">
+	          <label class="label">Details</label>
+	        </div>
+	        <div class="field-body">
+	          <div class="field">
+	            <div class="control">
+	              <textarea class="textarea"
+	                  formControlName="content"
+	                  (change)="updateClassifiedChanges()"
+	                  [ngClass]="{
+	                               'is-success' :  classifiedForm.get('content').valid &&  classifiedForm.get('content').dirty,
+	                               'is-danger'  :  !classifiedForm.get('content').valid
+	                             }">
+	              </textarea>
+	              <p class="error" [hidden]="classifiedForm.get('content').valid">Content is not valid</p>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </form>
+	  </div>
+	</div>
+
+	<button class="button is-success" (click)="initClassifiedListing()" *ngIf="!classified" >Start New Classified Listing</button>	
+</div>
