@@ -1,7 +1,8 @@
 <div class="container">
-	<div class="content columns" *ngIf="classified">
-	  <div class="column is-6">
-	    <h1>Classified Listing Preview</h1>
+	<div class="row" *ngIf="classified">
+	  
+	  <div class="col-sm-6">
+	    <h1>Classified Preview</h1>
 	    <article class="message">
 	      <div class="message-header">
 	        <p>{{(classified | async).title}}</p>
@@ -10,16 +11,18 @@
 	        <img [src]="(classified | async).image" width="350px"><br>
 	        <p>{{ (classified | async).content }}</p>
 	        <hr>
-	        <h4>List Price: {{ (classified | async).price | currency}}</h4>
+	        <h4>Classified Price: {{ (classified | async).price | currency}}</h4>
 	      </div>
 	    </article>
 	    <h3>Form Values</h3>
 	    <p>Form value: <br> {{ classifiedForm.value | json }}</p>
 	    <p>Form status: {{ classifiedForm.status | json }}</p>
 	  </div>
-	  <div class="column">
+
+	  <div class="col-sm-6">
+	    
 	    <form  [formGroup]="classifiedForm" novalidate>
-	    <h1>Create your Listing</h1>
+	    <h1>Modify your Classified</h1>
 	    <div class="field is-horizontal">
 	      <div class="field-label is-normal">
 	        <label class="label">Title</label>
@@ -28,7 +31,7 @@
 	        <div class="field">
 	          <div class="control">
 	            <input class="input" type="text"
-	                   formControlName="title"
+	                   formControlName="title" class="form-control" 
 	                   (change)="updateClassifiedChanges()"
 	                   [ngClass]="{
 	                                'is-success' :  classifiedForm.get('title').valid &&  classifiedForm.get('title').dirty,
@@ -49,7 +52,7 @@
 	        <div class="field">
 	          <div class="control">
 	            <input class="input" type="text"
-	                   formControlName="image"
+	                   formControlName="image" class="form-control" 
 	                   (change)="updateClassifiedChanges()"
 	                   [ngClass]="{
 	                               'is-success' :  classifiedForm.get('image').valid &&  classifiedForm.get('image').dirty,
@@ -73,7 +76,7 @@
 	                </a>
 	              </p>
 	              <p class="control is-expanded">
-	                <input class="input" type="number"
+	                <input class="input" type="number" class="form-control" 
 	                       formControlName="price"
 	                       (change)="updateClassifiedChanges()"
 	                       [ngClass]="{
@@ -94,7 +97,7 @@
 	          <div class="field">
 	            <div class="control">
 	              <textarea class="textarea"
-	                  formControlName="content"
+	                  formControlName="content" class="form-control" 
 	                  (change)="updateClassifiedChanges()"
 	                  [ngClass]="{
 	                               'is-success' :  classifiedForm.get('content').valid &&  classifiedForm.get('content').dirty,
@@ -110,5 +113,5 @@
 	  </div>
 	</div>
 
-	<button class="button is-success" (click)="initClassifiedListing()" *ngIf="!classified" >Start New Classified Listing</button>	
+	<button class="btn btn-success btn-lg" (click)="initClassifiedListing()" *ngIf="!classified" >Create New Classified</button>	
 </div>

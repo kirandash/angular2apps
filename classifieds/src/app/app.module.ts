@@ -11,11 +11,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ClassifiedListComponent } from './components/classified-list/classified-list.component';
+import { ClassifiedViewComponent } from './components/classified-view/classified-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClassifiedListComponent
+    ClassifiedListComponent,
+    ClassifiedViewComponent
   ],
   imports: [
     BrowserModule,
