@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyBkqppl22dNN2GhB2pEyhBChysVfVScSx8",
-    authDomain: "fir-gallery-4da08.firebaseapp.com",
-    databaseURL: "https://fir-gallery-4da08.firebaseio.com",
-    projectId: "fir-gallery-4da08",
-    storageBucket: "fir-gallery-4da08.appspot.com",
-    messagingSenderId: "874642114856"
+    apiKey: "AIzaSyDN-iTuYXvGOdBGIzxR4_IBNBRmNpij_bo",
+    authDomain: "infinite-scroll-2aee2.firebaseapp.com",
+    databaseURL: "https://infinite-scroll-2aee2.firebaseio.com",
+    projectId: "infinite-scroll-2aee2",
+    storageBucket: "infinite-scroll-2aee2.appspot.com",
+    messagingSenderId: "112419487559"
   }  
 };

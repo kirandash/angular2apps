@@ -8,6 +8,7 @@ export class ImageService {
 
   constructor(private db: AngularFireDatabase) { }
 
+  // group = number of images to load each time, endKey will be the key of the last image loaded. Explain the logic
   getImages(group, endKey?) {
   	// Build the query to feed to firebase
     let query = {
