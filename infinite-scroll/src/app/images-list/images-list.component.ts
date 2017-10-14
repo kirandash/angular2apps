@@ -55,6 +55,9 @@ export class ImagesListComponent implements OnInit {
     	getImages(this.group+1, this.endKey) // Grab 1 extra image data and save its key
     	.do(images => {
     		this.endKey = _.last(images)['$key'] // update the key to last key of current set or BehaviorSubject saved so that the key can be used for next iteration
+
+        console.log(images);
+
     		const newImages = _.slice(images, 0, this.group)
 
         console.log(newImages);
