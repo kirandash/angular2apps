@@ -22,7 +22,7 @@
 				</ul>
 	    	</div>
 	    	<div class="col-sm-4">
-	    		<div class="profile-meta">
+	    		<div>
 					<p>
 						<span class="label label-default">{{profile.followers}} Followers</span>
 						<span class="label label-primary">Following {{profile.following}}</span>
@@ -30,8 +30,20 @@
 						<span class="label label-info">{{profile.public_repos}} Public Repos</span>	
 					</p>
 					<p>
-						<a href="{{profile.html_url}}" class="btn btn-success" target="_blank">View profile on Github</a>
+						<a href="{{profile.html_url}}" class="btn btn-success btn-sm" target="_blank">View profile on Github</a>
 					</p>
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Repos</h3>
+					  </div>
+					  <div class="panel-body" *ngFor="let repo of repos">
+					    <p class="clearfix">
+					    {{repo.name}} <a href="{{repo.html_url}}" target="_top" class="btn btn-sm btn-warning pull-right">View project on github</a>
+					    </p>
+					    <p *ngIf="repo.description">{{repo.description}}</p>
+					    <hr>
+					  </div>
+					</div>					
 	    		</div>
 	    	</div>
 	    </div>
