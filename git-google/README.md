@@ -38,3 +38,12 @@ Create ProfileService + Import http module in app.module.ts, Import service is a
 Import FormsModule in app.module.ts
 
 search on keyup
+
+### STEP 8: Making it ready for production
+
+ng build --prod
+
+Now the final files from dist folder can be hosted any where. Remember to change base href in index.html from / to /ui/git-google
+
+Read More about Github API at:
+https://developer.github.com/v3/
