@@ -20,3 +20,11 @@ Check app.module.ts
 
 Add profile selector <gg-profile></gg-profile> in app.component.html file
 
+### STEP 4: Create profile Service
+
+ng g s profile
+
+import { Http, Headers } from '@angular/http'; 
+import 'rxjs/add/operator/map';
+
+Create ProfileService + Import http module in app.module.ts, Import service is app.module.ts and then in profile component ts
