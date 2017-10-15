@@ -1,3 +1,40 @@
-<p>
-  profile works!
-</p>
+<!-- Check if profile exists -->
+<div *ngIf="profile">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	  	{{profile.name}} <small>({{profile.login}})</small>
+	  	<span *ngIf="profile.company">
+	  		, Works at: {{profile.company}}
+	  	</span>  
+	  	{{profile.location}}
+	  </div>
+	  <div class="panel-body">
+	    <div class="row">
+	    	<div class="col-sm-3">
+	    		<img src="{{profile.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+	    	</div>
+	    	<div class="col-sm-5">
+				<ul class="list-group">
+				  <li class="list-group-item">{{profile.bio}}</li>
+				  <li class="list-group-item" *ngIf="profile.hireable"><span class="glyphicon glyphicon-briefcase"></span> Available for hire</li>
+				  <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank"><span class="glyphicon glyphicon-globe"></span> {{profile.blog}}</a></li>
+				  <li class="list-group-item" *ngIf="profile.email"><a href="mailto:{{profile.email}}"><span class="glyphicon glyphicon-envelope"></span> {{profile.email}}</a></li>
+				</ul>
+	    	</div>
+	    	<div class="col-sm-4">
+	    		<div class="profile-meta">
+					<p>
+						<span class="label label-default">{{profile.followers}} Followers</span>
+						<span class="label label-primary">Following {{profile.following}}</span>
+						<span class="label label-success">{{profile.public_gists}} Public gists</span>
+						<span class="label label-info">{{profile.public_repos}} Public Repos</span>	
+					</p>
+					<p>
+						<a href="{{profile.html_url}}" class="btn btn-success" target="_blank">View profile on Github</a>
+					</p>
+	    		</div>
+	    	</div>
+	    </div>
+	  </div>
+	</div>
+</div>

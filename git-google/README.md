@@ -28,3 +28,6 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 Create ProfileService + Import http module in app.module.ts, Import service is app.module.ts and then in profile component ts
+
+### STEP 5: Display profile data
+
