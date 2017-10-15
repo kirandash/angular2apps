@@ -29,5 +29,12 @@ import 'rxjs/add/operator/map';
 
 Create ProfileService + Import http module in app.module.ts, Import service is app.module.ts and then in profile component ts
 
-### STEP 5: Display profile data
+### STEP 5: Display profile data with getProfileInfo in profile service
 
+### STEP 6: Display repos with ngFor and getProfileRepos in profile service
+
+### STEP 7: Search profile,
+
+Import FormsModule in app.module.ts
+
+search on keyup

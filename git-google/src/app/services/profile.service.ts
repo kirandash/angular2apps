@@ -26,4 +26,8 @@ export class ProfileService {
       .map(res => res.json()); // observable is returned
   }
 
+  updateProfile(username:string){
+    this.username = username;
+  }
+
 }

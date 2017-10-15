@@ -1,3 +1,13 @@
+<div class="row">
+	<div class="col-sm-12">
+		<form action="">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search Git user with username" [(ngModel)]="username" name="username" (keyup)="findProfile()"><!-- Bind a property username with ngModel -->
+			</div>
+		</form>
+	</div>
+</div>
+
 <!-- Check if profile exists -->
 <div *ngIf="profile">
 	<div class="panel panel-default">
@@ -15,7 +25,7 @@
 	    	</div>
 	    	<div class="col-sm-5">
 				<ul class="list-group">
-				  <li class="list-group-item">{{profile.bio}}</li>
+				  <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
 				  <li class="list-group-item" *ngIf="profile.hireable"><span class="glyphicon glyphicon-briefcase"></span> Available for hire</li>
 				  <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank"><span class="glyphicon glyphicon-globe"></span> {{profile.blog}}</a></li>
 				  <li class="list-group-item" *ngIf="profile.email"><a href="mailto:{{profile.email}}"><span class="glyphicon glyphicon-envelope"></span> {{profile.email}}</a></li>
